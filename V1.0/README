@@ -1,0 +1,18 @@
+Important setup details can be found here.
+
+1.You need a "Fully Qualified Domain Name" in order to have your own mail server, so make sure you have one and change the mydomain parameter in super.sh before you run the script.
+
+mydomain="example.com"
+
+2. You need to obtain some signed certificates in order to operate your mail server. If you run the setup script, free self-signed ones will be placed in the correct locations. If you want official certificates, which you most likely will need to get at some point, find a service on the web that will generate them for you. After that; 
+
+place the certificate in: /etc/pki/tls/certs/
+Place the private key in: /etc/pki/tls/private/
+
+Also rename the certificate and key file to be "server.pem". This is because the script tells each service to look for server.pem
+
+3. All default passwords will be admin unless you change the database_pass variable within super.sh. If you want to create a pasword for a new mail user it is advised that you use the following command, because it will hash and salt your plain-text password, making it much harder to crack;
+
+doveadm pw -p yourpassword -s ssha512 -r 10
+
+
