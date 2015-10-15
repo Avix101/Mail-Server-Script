@@ -18,7 +18,7 @@ sudo $package_manager install perl-Razor-Agent perl-DBD-Pg -y
 start_tag="####CURRENT BUILD !!!! LEAVE THIS TAG LINE INTACT IF YOU PLAN TO EVER USE THE SETUP SCRIPT AGAIN OR BE READY TO REINSTALL DOVECOT... DO NOT REMOVE####"
 end_tag="####END OF CURRENT BUILD... YOU MAY ADJUST SETTINGS OUTSIDE OF THIS TAG, OR IF YOU WISH TO CHANGE SETTINGS IN THIS TAG, ADJUST dovecot.sh AND RERUN THE SETUP"
 
-amavis_settings=(MYHOME myhostname mydomain sa_spam_subject_tag undecipherable_subject_tag sa_tag_level_deflt)
+amavis_settings=(MYHOME myhostname mydomain sa_spam_subject_tag undecipherable_subject_tag sa_tag_level_deflt sa_tag2_level_deflt bypass_virus_checks_maps)
 
 
 for var in ${amavis_settings[*]}; do
@@ -70,6 +70,9 @@ $end_tag" | sudo tee -a "$amavis_conf"
 
 sudo mkdir -p /var/amavis/.razor/
 sudo touch /var/amavis/.razor/razor-agent.conf
+
+sudo mkdir -p /var/amavis/.spamassassin/
+sudo ln -s /etc/mail/spamassassin/local.cf /var/amavis/.spamassassin/user_prefs
 
 sudo sed -i "/$start_tag/,/$end_tag/d" "/var/amavis/.razor/razor-agent.conf"
 
@@ -139,6 +142,8 @@ bayes_store_module Mail::SpamAssassin::BayesStore::PgSQL
 bayes_sql_dsn DBI:Pg:dbname=sa_bayes;host=localhost
 bayes_sql_username sa
 bayes_sql_password $default_password
+
+score BAYES_999 4.0
 
 $end_tag" | sudo tee -a "$spamassassin_conf"
 

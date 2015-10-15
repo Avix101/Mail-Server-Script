@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+# Todo: sa-update via cron.
 #-----------------------------------------#
 ###Welcome to the main setup script. Here you will be able to adjust crucial variables
 # for each section as well as see which files executed and when.
@@ -114,10 +114,15 @@ spamassassin_conf="/etc/mail/spamassassin/local.cf"
 MYHOME="/var/amavis"
 undecipherable_subject_tag=""
 sa_spam_subject_tag=""
+#Always include spam score headers:
 sa_tag_level_deflt="-9999"
+#Note: Amavis ignores required_score and instead uses sa_tag2_level_deflt:
+sa_tag2_level_deflt=5
+required_score=5
+#Disable virus scanning.  (Companies with Windows clients may want to re-enable virus scanning.  Requires more AWS resources at high volume):
+@bypass_virus_checks_maps = (1);
 required_hits=5
 report_safe=0
-required_score=5
 rewrite_header=""
 
 default_sieve="/etc/dovecot/sieve/default.sieve"
@@ -252,4 +257,3 @@ sudo chown root:root /etc/postfix/pgsql/
 echo "Script permission has been highly elevated because it contains the default plain-text password. To run super.sh again you will need to become root, or change the file's permissions. -> sudo chmod 666 super.sh" 
 
 echo "The setup is finished!"
-
