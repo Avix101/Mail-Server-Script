@@ -205,6 +205,8 @@ fi
 sudo groupadd -g 12 mail
 sudo useradd -g mail -u 200 -d /mnt/vmail -s /sbin/nologin mailreader
 
+./mailx.sh
+
 ./dovecot.sh 
 
 ./pgsql.sh
