@@ -120,7 +120,7 @@ sa_tag_level_deflt="-9999"
 sa_tag2_level_deflt=5
 required_score=5
 #Disable virus scanning.  (Companies with Windows clients may want to re-enable virus scanning.  Requires more AWS resources at high volume):
-@bypass_virus_checks_maps=1
+#@bypass_virus_checks_maps=(1);
 required_hits=5
 report_safe=0
 rewrite_header=""
