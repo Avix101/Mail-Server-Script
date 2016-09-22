@@ -254,6 +254,6 @@ sudo chmod 755 /etc/postfix/pgsql/
 sudo chown -R mailreader:root /etc/postfix/pgsql/
 sudo chown root:root /etc/postfix/pgsql/
 
-echo "Script permission has been highly elevated because it contains the default plain-text password. To run super.sh again you will need to become root, or change the file's permissions. -> sudo chmod 666 super.sh" 
+echo "Script permission has been highly elevated because it contains the default plain-text password. To run super.sh again you will need to become root, or change the file's permissions. -> sudo chmod 755 super.sh" 
 
 echo "The setup is finished!"
