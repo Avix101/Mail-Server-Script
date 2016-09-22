@@ -4,11 +4,14 @@
 ###Welcome to the Amavis / Clamav / Spamassassin setup script. Any variables that may need to be adjusted should be changed in the designated "variables" section in the main script. Some non variable file writes should be changed in this file if necessary though.
 #-----------------------------------------#
 
-if [ "$package_manager" = "yum" ]; then
+#if [ "$package_manager" = "yum" ]; then
 
-sudo rpm -Uvh http://repoforge.mirror.digitalpacific.com.au/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
+#sudo rpm -Uvh http://repoforge.mirror.digitalpacific.com.au/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
 
-fi
+#fi
+
+#http://repoforge.mirror.constant.com/redhat/el6/en/x86_64/rpmforge/
+#http://repoforge.mirror.constant.com/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
 
 sudo $package_manager install amavisd-new clamd perl-IO-Socket-INET6 -y
 
