@@ -30,7 +30,7 @@ sudo $package_manager install perl-Razor-Agent perl-DBD-Pg -y
 start_tag="####CURRENT BUILD !!!! LEAVE THIS TAG LINE INTACT IF YOU PLAN TO EVER USE THE SETUP SCRIPT AGAIN OR BE READY TO REINSTALL DOVECOT... DO NOT REMOVE####"
 end_tag="####END OF CURRENT BUILD... YOU MAY ADJUST SETTINGS OUTSIDE OF THIS TAG, OR IF YOU WISH TO CHANGE SETTINGS IN THIS TAG, ADJUST dovecot.sh AND RERUN THE SETUP"
 
-amavis_settings=(MYHOME myhostname mydomain sa_spam_subject_tag undecipherable_subject_tag sa_tag_level_deflt sa_tag2_level_deflt bypass_virus_checks_maps)
+amavis_settings=(MYHOME myhostname mydomain sa_spam_subject_tag undecipherable_subject_tag sa_tag_level_deflt sa_tag2_level_deflt)
 
 
 for var in ${amavis_settings[*]}; do
