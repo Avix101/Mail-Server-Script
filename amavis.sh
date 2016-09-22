@@ -6,7 +6,7 @@
 
 if [ "$package_manager" = "yum" ]; then
 
-sudo rpm -Uvh http://repository.it4i.cz/mirrors/repoforge/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
+sudo rpm -Uvh http://repoforge.mirror.digitalpacific.com.au/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
 
 fi
 
