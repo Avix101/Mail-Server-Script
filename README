@@ -1,6 +1,6 @@
 Important setup details can be found here.
 
-Visit https://avix.co/server-hosting for more info on how to setup your own mail server (using this script).
+Visit https://avix.co/blog/creating-your-own-mail-server-amazon-ec2-postfix-dovecot-postgresql-amavis-spamassassin-apache-and-squirrelmail-part-1/ and https://avix.co/blog/creating-your-own-mail-server-amazon-ec2-postfix-dovecot-postgresql-amavis-spamassassin-apache-and-squirrelmail-part-2/ for more info on how to setup your own mail server (using this script).
 
 1.You need a "Fully Qualified Domain Name" in order to have your own mail server, so make sure you have one and change the mydomain parameter in super.sh before you run the script.
 
