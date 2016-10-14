@@ -44,8 +44,8 @@ echo "$start_tag
         AllowOverride All
         </Directory>
         DocumentRoot /var/www/vhosts/$mydomain/httpdocs
-        ServerName $mydomain
-	Redirect permanent /mail https://$mydomain/mail
+        ServerName webmail.$mydomain
+	Redirect permanent / https://webmail.$mydomain
 </VirtualHost>
 
 NameVirtualHost *:443
@@ -58,9 +58,8 @@ NameVirtualHost *:443
         <Directory /var/www/vhosts/$mydomain/httpsdocs>
         AllowOverride All
         </Directory>
-        DocumentRoot /var/www/vhosts/$mydomain/httpsdocs
-        ServerName $mydomain
-	Alias /mail /usr/local/squirrelmail/www
+        ServerName webmail.$mydomain
+	DocumentRoot /usr/local/squirrelmail/www
 
         <Directory /usr/local/squirrelmail/www>
         Options None
